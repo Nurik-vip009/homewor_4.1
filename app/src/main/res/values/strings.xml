@@ -7,4 +7,6 @@
     <string name="name">Введите имя</string>
     <string name="todo">TODO</string>
     <string name="profile">Profile</string>
+    <string name="nickname">Nickname</string>
+    <string name="username">Username</string>
 </resources>
