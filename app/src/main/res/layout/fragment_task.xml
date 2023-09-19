@@ -4,19 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.task.TaskFragment">
+    tools:context=".ui.task.TaskFragment"
+    android:background="?android:attr/selectableItemBackground">
 
     <EditText
         android:id="@+id/et_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/title" />
+        android:hint="@string/title"
+        android:textColor="@android:color/black"/>
 
     <EditText
         android:id="@+id/et_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/description" />
+        android:hint="@string/description"
+        android:textColor="@android:color/black"/>
 
     <Button
         android:id="@+id/btn_save"

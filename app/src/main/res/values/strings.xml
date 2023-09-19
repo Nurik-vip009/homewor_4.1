@@ -14,4 +14,8 @@
     <string name="title">Title</string>
     <string name="description">Description</string>
     <string name="save">SAVE</string>
+    <string name="tit">Title</string>
+    <string name="titl">Title</string>
+    <string name="title_1">Title</string>
+    <string name="desc">Desc</string>
 </resources>
