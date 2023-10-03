@@ -18,4 +18,11 @@
     <string name="titl">Title</string>
     <string name="title_1">Title</string>
     <string name="desc">Desc</string>
+    <string name="get_started">Get Started</string>
+    <string name="skip">skip</string>
+    <string name="skip_">Skip</string>
+    <string name="delete_title">Remove an element?</string>
+    <string name="delete_message">Are you sure you want to delete the selected item?</string>
+    <string name="no">NO</string>
+    <string name="yes">YES</string>
 </resources>

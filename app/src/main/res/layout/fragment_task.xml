@@ -3,30 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:layout_margin="16dp"
     tools:context=".ui.task.TaskFragment"
     android:background="?android:attr/selectableItemBackground">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/title"
-        android:textColor="@android:color/black"/>
+        app:endIconMode="clear_text"
+        android:textColor="@android:color/black"
+        tools:ignore="MissingConstraints">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInput_et2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/description"
-        android:textColor="@android:color/black"/>
+        android:layout_marginTop="16dp"
+        app:endIconMode="clear_text"
+        android:textColor="@android:color/black">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInput_et3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/save"
-        android:layout_marginTop="16dp" />
+        android:text="@string/save" />
 
 </LinearLayout>

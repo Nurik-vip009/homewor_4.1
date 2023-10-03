@@ -10,12 +10,14 @@ import com.example.taskmanager.R
 import com.example.taskmanager.databinding.ItemTaskBinding
 import com.example.taskmanager.ui.task.model.Task
 
-class TaskAdapter : Adapter<TaskAdapter.TaskViewHolder>() {
+class TaskAdapter(
+    private var OnLongClick:((Task)->Unit)
+) : Adapter<TaskAdapter.TaskViewHolder>() {
 
     private val list = arrayListOf<Task>()
-
-    fun setData(data: Task) {
-        list.add(0,data)
+    fun addData(newList: List<Task>){
+        list.clear()
+        list.addAll(newList)
         notifyDataSetChanged()
     }
 
@@ -45,6 +47,10 @@ class TaskAdapter : Adapter<TaskAdapter.TaskViewHolder>() {
             }
             binding.tvTitle.text = task.title
             binding.tvDesc.text = task.desc
+            itemView.setOnLongClickListener {
+                OnLongClick.invoke(task)
+                return@setOnLongClickListener true
+            }
         }
     }
 }

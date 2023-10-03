@@ -9,8 +9,10 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.setFragmentResult
 import androidx.navigation.fragment.findNavController
+import androidx.viewbinding.ViewBinding
 import com.example.taskmanager.databinding.FragmentTaskBinding
 import com.example.taskmanager.ui.task.model.Task
+import com.example.taskmanager.ui.utils.App
 
 class TaskFragment : Fragment() {
 
@@ -27,17 +29,18 @@ class TaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSave.setOnClickListener{
-            if (binding.etTitle.text.toString().isNotEmpty()){
+            if (binding.textInputEt2.text.toString().isNotEmpty()){
                 findNavController().navigateUp()
             }else{
                 Toast.makeText(context, "ERROR", Toast.LENGTH_SHORT).show()
-                binding.etTitle.error = "ERROR"
+                binding.textInputEt2.error = "ERROR"
                 return@setOnClickListener
             }
             val data = Task(
-                title = binding.etTitle.text.toString(),
-                desc = binding.etDesc.text.toString()
+                title = binding.textInputEt2.text.toString(),
+                desc = binding.textInputEt3.text.toString()
             )
+            App.db.taskDao().insert(data)
             setFragmentResult(RESULT_KEY, bundleOf(TASK_KEY to data))
             findNavController().navigateUp()
         }
