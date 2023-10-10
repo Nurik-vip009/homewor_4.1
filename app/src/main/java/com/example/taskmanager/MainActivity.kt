@@ -1,7 +1,6 @@
 package com.example.taskmanager
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.navigation.findNavController
@@ -10,6 +9,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.taskmanager.data.local.Pref
 import com.example.taskmanager.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        if (FirebaseAuth.getInstance().currentUser?.uid==null) navController.navigate(R.id.phoneFragment)
 
         /*val fragmentWithoutBottomNav = setOf(
             R.id.onBoardingFragment
@@ -52,6 +54,5 @@ class MainActivity : AppCompatActivity() {
         }
         if (!pref.isUserShow())
             navController.navigate(R.id.onBoardingFragment)
-
     }
 }

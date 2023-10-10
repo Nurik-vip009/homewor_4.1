@@ -35,6 +35,9 @@ class OnBoardingFragment : Fragment() {
         binding.btnGet.setOnClickListener{
             onClick()
         }
+        binding.btnSkip.setOnClickListener{
+            onClick()
+        }
     }
 
 
